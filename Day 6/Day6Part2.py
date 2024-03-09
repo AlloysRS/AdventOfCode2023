@@ -2,6 +2,8 @@ import csv
 
 def read_csv(filename):
     margin_of_error = 0
+    timestr = ""
+    distancestr = ""
 
     with open(filename, 'r') as file:
         for line in file:
@@ -13,11 +15,11 @@ def read_csv(filename):
 
         # Concatenate times/distances as strings then set totals
         for time in times:
-            timestr = "" + time
+            timestr = timestr + time
         total_time = int(timestr)
 
         for distance in distances:
-            distancestr = "" + distance
+            distancestr = distancestr + distance
         total_distance = int(distancestr)
 
         # For loop to iterate over races, initialise ways_to_win as 0
@@ -38,6 +40,6 @@ def read_csv(filename):
     # return margin_of_error
     return margin_of_error
 
-filename = 'biggerrace.csv'
+filename = 'input.csv'
 margin_of_error = read_csv(filename)
 print(margin_of_error)
